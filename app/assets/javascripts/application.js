@@ -17,6 +17,8 @@
 //= require backbone
 //= require bootstrap
 //= require trello_clone
+//= require composite_views
+
 //= require_tree ../templates
 //= require_tree ./utils
 //= require_tree ./models
