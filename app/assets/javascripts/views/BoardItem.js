@@ -1,4 +1,4 @@
-TrelloClone.Views.BoardItem = Backbone.View.extend({
+TrelloClone.Views.BoardItem = Backbone.CompositeView.extend({
   template: JST['boards/board_item'],
 
   tagName: 'li',

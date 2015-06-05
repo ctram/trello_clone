@@ -184,6 +184,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.0.0)
+  ejs
   font-awesome-rails
   jbuilder (~> 1.2)
   jquery-rails
