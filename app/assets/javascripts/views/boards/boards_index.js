@@ -20,10 +20,10 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
   },
 
   addBoardSubview: function (board) {
-    var boardItem = new TrelloClone.Views.BoardItem({board: board});
-    this.addSubview('ul.boards', boardItem);
+    var boardItemView = new TrelloClone.Views.BoardItem({
+      board: board,
+      attributes: {href: ('#boards/' + board.escape('id'))}
+    });
+    this.addSubview('ul.boards', boardItemView);
   }
-
-
-
 });

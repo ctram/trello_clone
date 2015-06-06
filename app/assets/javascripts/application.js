@@ -18,6 +18,7 @@
 //= require bootstrap
 //= require trello_clone
 //= require composite_views
+//= require serializeJSON
 
 //= require_tree ../templates
 //= require_tree ./utils
