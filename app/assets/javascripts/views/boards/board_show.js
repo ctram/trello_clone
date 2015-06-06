@@ -9,6 +9,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
   render: function () {
     var lists = [];
     var extractedLists = this.board.attributes.lists;
+    // TODO: lists are not showing on the board show page.
     debugger
     _(extractedLists).each(function (listObj) {
       var title = listObj.title;
