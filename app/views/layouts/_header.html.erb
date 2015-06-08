@@ -15,7 +15,7 @@
     <% if signed_in? %>
       <li id='add-dropdown' class='dropdown'>
         <button
-          class='dropdown-toggle navbar-btn btn btn-primary'
+          class='dropdown-toggle navbar-btn btn btn-primary new-board'
           data-toggle='dropdown'><span class='glyphicon glyphicon-plus'></span>
         </button>
       </li>
@@ -35,3 +35,11 @@
 <%= flash[:errors].join("<br>").html_safe %>
 </div>
 <% end %>
+
+
+<script>
+  $newBoardButton = $('.new-board');
+  $newBoardButton.on('click', function (event) {
+    Backbone.history.navigate('boards/new', {trigger: true} );
+  });
+</script>

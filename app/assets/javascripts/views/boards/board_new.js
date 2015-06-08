@@ -1,7 +1,8 @@
 TrelloClone.Views.BoardNew = Backbone.CompositeView.extend({
   template: JST['boards/board_new'],
 
-  initialize: function () {
+  initialize: function (options) {
+    this.boards = options.boards;
   },
 
   events: {
@@ -15,11 +16,13 @@ TrelloClone.Views.BoardNew = Backbone.CompositeView.extend({
     var newBoard = new TrelloClone.Models.Board(boardAttrs);
     newBoard.save({}, {
       success: function (model, response, options) {
-        var id = newBoard.get('id')
-        Backbone.history.navigate((newBoard.url() + '/' + id), {trigger: true});
-      }
-    });
+        var id = newBoard.get('id');
+        this.boards.add(newBoard);
+        var boardUrl = extractUrl(newBoard.url());
 
+        Backbone.history.navigate( boardUrl, {trigger: true});
+      }.bind(this)
+    });
   },
 
   render: function () {
@@ -30,3 +33,11 @@ TrelloClone.Views.BoardNew = Backbone.CompositeView.extend({
 
 
 });
+
+extractUrl = function (url) {
+  url = url.split('');
+  url = url.slice(5);
+
+  url = url.join('');
+  return url;
+};

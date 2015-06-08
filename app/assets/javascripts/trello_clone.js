@@ -7,7 +7,7 @@ window.TrelloClone = {
     var $rootEl = $('#main');
     var boards = new TrelloClone.Collections.Boards();
     boards.fetch();
-    new TrelloClone.Routers.Router(boards, $rootEl)
+    new TrelloClone.Routers.Router(boards, $rootEl);
     Backbone.history.start();
   }
 };

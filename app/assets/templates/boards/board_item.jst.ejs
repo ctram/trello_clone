@@ -1,1 +1,6 @@
 <%= board.escape('title') %>
+<button href='#destroy-board'
+  class='destroy-board-button'
+  data-board-id= <%= board.escape('id') %>
+  data-user-id=<%= board.escape('user_id')%>
+  >Destroy!</button>

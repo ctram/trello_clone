@@ -3,10 +3,18 @@ TrelloClone.Views.BoardItem = Backbone.CompositeView.extend({
 
   tagName: 'a',
 
+  events: {
+    'click button': 'destroyBoardItem'
+  },
+
+  destroyBoardItem: function () {
+    
+  }
+
   initialize: function (options) {
     this.board = options.board;
     this.listenTo(this.board, 'sync', this.render);
-
+    this.listenTo(this.board, 'remove', this.destroy());
   },
 
   render: function () {
