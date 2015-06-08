@@ -14,6 +14,6 @@ TrelloClone.Collections.Boards = Backbone.Collection.extend({
       collection.add(model);
     }
     return model;
-  }
+  },
 
 });
