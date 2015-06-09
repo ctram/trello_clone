@@ -16,3 +16,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+ul.lists {
+
+}
+
+ul.lists > div > div.list {
+  float: left;
+  margin: 10px;
+  border: 2px solid black;
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 500px;
+}
+
+.list-add-button {
+
+}
