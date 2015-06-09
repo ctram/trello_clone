@@ -1,7 +1,4 @@
 TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
-  events: {
-    'click button.destroy-board-button': 'destroyBoard'
-  },
 
   template: JST['boards/boards_index'],
 
@@ -9,7 +6,8 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
     this.boards = options.boards;
 
     this.listenTo(this.boards, 'add', this.addBoardSubview);
-    this.listenTo(this.boards, 'sync add remove', this.render);
+    this.listenTo(this.boards, 'remove', this.removeSubview);
+    this.listenTo(this.boards, 'sync add', this.render);
 
     this.boards.each(function (board) {
       this.addBoardSubview(board);
@@ -30,6 +28,11 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
       attributes: {href: ('#boards/' + board.escape('id'))}
     });
     this.addSubview('ul.boards', boardItemView);
+  },
+
+  removeSubview: function (model, collection, options) {
+    debugger
+    this.removeModelSubview('ul.boards', model);
   }
 
 
